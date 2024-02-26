@@ -25,11 +25,11 @@ jobs:
             laravel: 11
         include:
           - laravel: 9
-            phpunitConfig: phpunit_9.xml
+            phpunitConfig: phpunit_9.xml.dist
           - laravel: 10
-            phpunitConfig: phpunit.xml
+            phpunitConfig: phpunit.xml.dist
           - laravel: 11
-            phpunitConfig: phpunit.xml
+            phpunitConfig: phpunit.xml.dist
 
     name: PHP ${{ matrix.php }} - Laravel ${{ matrix.laravel }} (${{ matrix.stability }})
 
