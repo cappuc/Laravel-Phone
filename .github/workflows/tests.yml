@@ -23,6 +23,13 @@ jobs:
             laravel: 11
           - php: 8.1
             laravel: 11
+        include:
+          - laravel: 9
+            phpunitConfig: phpunit_9.xml
+          - laravel: 10
+            phpunitConfig: phpunit.xml
+          - laravel: 11
+            phpunitConfig: phpunit.xml
 
     name: PHP ${{ matrix.php }} - Laravel ${{ matrix.laravel }} (${{ matrix.stability }})
 
@@ -50,7 +57,7 @@ jobs:
           composer update --${{ matrix.stability }} --prefer-dist --no-interaction --no-progress
 
       - name: Execute tests
-        run: vendor/bin/phpunit
+        run: vendor/bin/phpunit -c ${{ matrix.phpunitConfig }}
         
       - name: Run phpstan
         run: vendor/bin/phpstan analyse --error-format=github
