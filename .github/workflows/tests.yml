@@ -27,6 +27,10 @@ jobs:
           - laravel: 9
             phpunitConfig: phpunit_9.xml.dist
           - laravel: 10
+            stability: prefer-lowest
+            phpunitConfig: phpunit_9.xml.dist
+          - laravel: 10
+            stability: prefer-stable
             phpunitConfig: phpunit.xml.dist
           - laravel: 11
             phpunitConfig: phpunit.xml.dist
